@@ -1,0 +1,16 @@
+<h1>Hello Tasks</h1>
+<!-- app/views/restaurants/index.html.erb -->
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <input type="checkbox" id="scales" name="scales" disabled
+        <%= "checked" if task.completed  %>
+      >
+      <%= link_to task.title, task_path(task.id) %>
+    </li>
+  <% end %>
+</ul>
+
+<p>
+<%= link_to "Create a new task", tasks_new_path %>
+</p>
